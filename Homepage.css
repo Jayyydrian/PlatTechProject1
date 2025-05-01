@@ -1,0 +1,309 @@
+/* General Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header and Navigation */
+header, nav {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    background-color: #213555;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header p {
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav {
+    background-color: #213555e3;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* Carousel */
+.carousel-inner img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* New Arrivals Section */
+.new-arrivals-products {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.new-arrivals-products .product {
+    width: 40%;
+    border: 2px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.new-arrivals-products .product img {
+    width: 100%;
+    height: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-arrivals-products .product img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Containers */
+.additional-containers .container {
+    background-color: #e3ea11cd;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.additional-containers img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Product Display Section */
+.product-box {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 380px; /* Fixed height for the product box */
+    background-color: #d2f509eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.product-image-container {
+    width: 100%;
+    height: 250px; /* Fixed height for the image container */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure image fits the container */
+}
+
+.star-rating i {
+    font-size: 1.2rem;
+}
+
+.rating-count {
+    font-size: 0.95rem;
+}
+
+/* Ensure the product description text and price are contained within the box */
+.product-box h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.product-box .star-rating,
+.product-box .rating-count {
+    margin-top: auto; /* Pushes the rating section to the bottom of the box */
+}
+
+.product-box button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.product-box button:hover {
+    background-color: #0056b3;
+}
+
+/* Best Sellers Section */
+.best-sellers {
+    background-color: #ba0a0a;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.best-sellers h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.best-sellers-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.best-sellers .product {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+}
+
+.best-sellers .product img {
+    width: 100%;
+    height: auto;
+}
+
+.best-sellers .product button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.best-sellers .product button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #ba0a0a;
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1.9rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    background-color: #ba0a0a;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.announcement-slider {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.announcement-slides {
+    display: flex;
+    transition: transform 10s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: slide 50s infinite linear; /* Added animation for continuous sliding */
+}
+
+.announcement-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcement-title {
+    padding: 10px 20px;
+}
+
+/* Keyframes for Sliding Effect */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+/* Slider Arrows */
+.slider-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.arrow-prev,
+.arrow-next {
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    pointer-events: all;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrow-prev:hover,
+.arrow-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
