@@ -1,9 +1,9 @@
-/* General Body */
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000000;
 }
 
 /* Header and Navigation */
@@ -192,6 +192,13 @@ nav a {
     width: 100%;
     height: auto;
 }
+
+.best-sellers .product .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
 
 .best-sellers .product button {
     background-color: #007bff;
