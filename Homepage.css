@@ -1,16 +1,16 @@
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #a71d1d;
 }
 
 /* Header and Navigation */
 header, nav {
     background: transparent;
-    position: relative;
-    z-index: 1;
+    position: fixed;  /* UPDATED: make header and nav fixed */
+    width: 100%;      /* UPDATED: ensure full width */
+    z-index: 1000;    /* UPDATED: keep on top of all elements */
 }
 
 header {
@@ -21,6 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    top: 0;           /* UPDATED: stick to top */
 }
 
 header p {
@@ -38,9 +39,10 @@ header form {
 }
 
 nav {
-    background-color: #213555e3;
+    background-color: #3e4248;
     padding: 10px 0;
     text-align: center;
+    top: 60px;        /* UPDATED: position below header */
 }
 
 nav a {
@@ -52,8 +54,9 @@ nav a {
 /* Carousel */
 .carousel-inner img {
     width: 100%;
-    height: 450px;
+    height: 480px;
     object-fit: cover;
+    margin-top: 100px;  /* UPDATED: push content below fixed header + nav */
 }
 
 /* New Arrivals Section */
@@ -78,10 +81,12 @@ nav a {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.new-arrivals-products .product img:hover {
+/* UPDATED: apply hover effect when the entire product is hovered */
+.new-arrivals-products .product:hover img {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Additional Containers */
 .additional-containers .container {
@@ -105,8 +110,8 @@ nav a {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    height: 380px; /* Fixed height for the product box */
-    background-color: #d2f509eb;
+    height: 380px;
+    background-color: #dbdcdaf9;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -115,7 +120,7 @@ nav a {
 
 .product-image-container {
     width: 100%;
-    height: 250px; /* Fixed height for the image container */
+    height: 250px;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -125,7 +130,14 @@ nav a {
 .product-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensure image fits the container */
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* UPDATED: Apply hover effect when the entire product box is hovered */
+.product-box:hover .product-image {
+    transform: scale(1.05);  /* Slightly zoom the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .star-rating i {
@@ -136,7 +148,6 @@ nav a {
     font-size: 0.95rem;
 }
 
-/* Ensure the product description text and price are contained within the box */
 .product-box h3 {
     font-size: 1.1rem;
     margin: 10px 0;
@@ -144,7 +155,7 @@ nav a {
 
 .product-box .star-rating,
 .product-box .rating-count {
-    margin-top: auto; /* Pushes the rating section to the bottom of the box */
+    margin-top: auto;
 }
 
 .product-box button {
@@ -198,7 +209,6 @@ nav a {
     font-weight: bold;
     margin: 10px 0;
 }
-
 
 .best-sellers .product button {
     background-color: #007bff;
@@ -255,7 +265,7 @@ footer p {
     list-style: none;
     padding: 0;
     margin: 0;
-    animation: slide 50s infinite linear; /* Added animation for continuous sliding */
+    animation: slide 50s infinite linear;
 }
 
 .announcement-slide {
@@ -269,26 +279,14 @@ footer p {
     padding: 10px 20px;
 }
 
-/* Keyframes for Sliding Effect */
 @keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(-200%);
-    }
-    75% {
-        transform: translateX(-300%);
-    }
-    100% {
-        transform: translateX(-400%);
-    }
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
 }
 
-/* Slider Arrows */
 .slider-arrows {
     position: absolute;
     top: 50%;
