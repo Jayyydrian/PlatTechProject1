@@ -8,24 +8,10 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  </style>
 </head>
 <body>
-  <header>
-    <h1>ST Motor & Gear</h1>
-    <p>Your one-stop shop for all things motorcycling!</p>
-    <!-- Search Bar in Header -->
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    </form>
-  </header>
-
-  <nav>
-    <a href="Homepage.html">Home</a>
-    <a href="#">Categories</a>
-    <a href="#">Contact</a>
-    <a href="login.html" id="login-link">Login</a> <!-- This will change based on login state -->
-  </nav>
-
   <!-- Carousel Section -->
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -49,9 +35,21 @@
     </button>
   </div>
 
+  <!-- Navigation Bar -->
+  <nav id="main-nav" aria-label="Primary navigation">
+    <h1>ST Motor &amp; Gear</h1>
+    <a href="Homepage.html">Home</a>
+    <a href="#">Categories</a>
+    <a href="#">Contact</a>
+    <a href="login.html" id="login-link">Login</a>
+    <form class="d-flex" role="search" aria-label="Search the site">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+    </form>
+  </nav>
+
   <!-- New Arrivals Footer -->
   <footer class="new-arrivals-footer">
-    <p>New Arrivals</p>
+    <p>Newest Arrivals</p>
   </footer>
 
   <!-- New Arrivals Section -->
@@ -94,7 +92,7 @@
       <div class="col-md-4">
         <div class="product-box text-start ad-container">
           <h3 class="ad-title">Dainese Pro Gear</h3>
-          <p class="ad-description">Dainese's Pro-Armor gear offers a compelling combination of safety, comfort, and versatility. Its advanced materials and design make it a suitable choice for riders seeking reliable protection without sacrificing mobility or comfort. While it may come at a higher price point, the investment in safety and performance is well-justified for serious riders.</p>
+          <p class="ad-description">Dainese's Pro-Armor gear offers a compelling combination of safety, comfort, and versatility...</p>
           <button class="btn btn-warning ad-cta">Shop Now</button>
         </div>
       </div>
@@ -141,70 +139,74 @@
     </div>
   </div>
   
-<!-- Best Sellers Section -->
+ <!-- Best Sellers Section -->
 <section class="best-sellers">
-  <h2 class="text-center my-4">Best Sellers</h2>
+  <h2>Best Sellers</h2>
   <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <div class="product-box">
-          <a href="bestseller1.html" class="product-image-container">
-            <img src="https://via.placeholder.com/300x200" alt="Best Seller 1" class="product-image">
-          </a>
-          <h3>₱5,999.00</h3>
-          <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
-            <div>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star text-primary"></i>
-              <i class="far fa-star text-primary"></i>
-            </div>
-            <span class="rating-count text-muted">(200)</span>
+      <div class="row g-4">
+          <!-- Best Seller 1 -->
+          <div class="col-md-4 text-center">
+              <div class="product-box">
+                  <a href="bestseller1.html" class="product-image-container">
+                      <img src="https://via.placeholder.com/300x200" alt="Best Seller 1" class="product-image">
+                  </a>
+                  <h3>₱5,999.00</h3>
+                  <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
+                      <div>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="far fa-star text-primary"></i>
+                      </div>
+                      <span class="rating-count text-muted">(200)</span>
+                  </div>
+                  <button>Shop Now</button>
+              </div>
           </div>
-        </div>
-      </div>
 
-
-      <div class="col-md-4 text-center">
-        <div class="product-box">
-          <a href="bestseller2.html" class="product-image-container">
-            <img src="https://via.placeholder.com/300x200" alt="Best Seller 2" class="product-image">
-          </a>
-          <h3>₱4,499.00</h3>
-          <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
-            <div>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star text-primary"></i>
-              <i class="far fa-star text-primary"></i>
-              <i class="far fa-star text-primary"></i>
-            </div>
-            <span class="rating-count text-muted">(150)</span>
+          <!-- Best Seller 2 -->
+          <div class="col-md-4 text-center">
+              <div class="product-box">
+                  <a href="bestseller2.html" class="product-image-container">
+                      <img src="https://via.placeholder.com/300x200" alt="Best Seller 2" class="product-image">
+                  </a>
+                  <h3>₱4,499.00</h3>
+                  <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
+                      <div>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="far fa-star text-primary"></i>
+                          <i class="far fa-star text-primary"></i>
+                      </div>
+                      <span class="rating-count text-muted">(150)</span>
+                  </div>
+                  <button>Shop Now</button>
+              </div>
           </div>
-        </div>
-      </div>
 
- 
-      <div class="col-md-4 text-center">
-        <div class="product-box">
-          <a href="bestseller3.html" class="product-image-container">
-            <img src="https://via.placeholder.com/300x200" alt="Best Seller 3" class="product-image">
-          </a>
-          <h3>₱6,299.00</h3>
-          <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
-            <div>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star text-primary"></i>
-              <i class="fas fa-star-half-alt text-primary"></i>
-              <i class="far fa-star text-primary"></i>
-            </div>
-            <span class="rating-count text-muted">(180)</span>
+          <!-- Best Seller 3 -->
+          <div class="col-md-4 text-center">
+              <div class="product-box">
+                  <a href="bestseller3.html" class="product-image-container">
+                      <img src="https://via.placeholder.com/300x200" alt="Best Seller 3" class="product-image">
+                  </a>
+                  <h3>₱6,299.00</h3>
+                  <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
+                      <div>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star text-primary"></i>
+                          <i class="fas fa-star-half-alt text-primary"></i>
+                          <i class="far fa-star text-primary"></i>
+                      </div>
+                      <span class="rating-count text-muted">(180)</span>
+                  </div>
+                  <button>Shop Now</button>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -215,14 +217,5 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Check if user is logged in and update the navigation
-    window.onload = function() {
-      if (localStorage.getItem("isLoggedIn") === "true") {
-        document.getElementById("login-link").innerHTML = '<i class="fas fa-user"></i>';
-        document.getElementById("login-link").href = "profile.html"; // Redirect to profile or any logged-in page
-      }
-    }
-  </script>
 </body>
 </html>

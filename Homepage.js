@@ -24,6 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
   nextArrow.addEventListener("click", showNextSlide);
   prevArrow.addEventListener("click", showPrevSlide);
 
-  // Auto slide every 4 seconds
   setInterval(showNextSlide, 4000);
+
+  // Hide nav on scroll down, show on scroll up
+  let lastScrollTop = 0;
+  const nav = document.querySelector("main-nav");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      nav.classList.add("nav-hidden"); // Add class to hide nav
+    } else {
+      nav.classList.remove("nav-hidden"); // Remove class to show nav
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scrolling value
+  });
 });
