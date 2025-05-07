@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biker World - Accessories</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Shop.css" />
+
+  <link rel="stylesheet" href="../includes/footer.css">
+  <link rel="stylesheet" href="../includes/navbar.css">
+
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+  
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <!-- FILTER SECTION -->
+    <div class="filter-section">
+      <div class="filter-button">
+      </div>
+      
+      <div class="sort-by">
+        <span>Sort by</span>
+        <select>
+          <option>Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest</option>
+          <option>Best Selling</option>
+        </select>
+      </div>
+      
+      <div class="view-as">
+        <span>View as</span>
+        <button id="list-view"><i class="fas fa-list"></i></button>
+        <button id="grid-view"><i class="fas fa-th"></i></button>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      <!-- SIDEBAR FILTERS -->
+      <div class="filter-sidebar" id="filter-sidebar">
+        <h2 class="filter-title">SHOP</h2>
+        
+        <div class="filter-group">
+          <h3>Categories</h3>
+          <div class="filter-option">
+            <input type="radio" id="helmets" name="category">
+            <label for="helmets">Helmets</label>
+          </div>
+          <div class="filter-option">
+            <input type="radio" id="apparel" name="category">
+            <label for="apparel">Apparel</label>
+          </div>
+          <div class="filter-option">
+            <input type="radio" id="parts" name="category">
+            <label for="parts">Parts</label>
+          </div>
+          <div class="filter-option">
+            <input type="radio" id="accessories" name="category">
+            <label for="accessories">Accessories</label>
+          </div>
+          </div>
+        
+        <div class="filter-group">
+          <h3>Brands</h3>
+          <div class="filter-option">
+            <input type="checkbox" id="brand1">
+            <label for="brand1">O'NEAL</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="brand2">
+            <label for="brand2">MUC-OFF</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="brand3">
+            <label for="brand3">ALPINESTARS</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="brand4">
+            <label for="brand4">FOX</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="brand5">
+            <label for="brand5">BELL</label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h3>Price Range</h3>
+          <div class="filter-option">
+            <input type="checkbox" id="price1">
+            <label for="price1">Under ₱500</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="price2">
+            <label for="price2">₱500 - ₱1,000</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="price3">
+            <label for="price3">₱1,000 - ₱2,000</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="price4">
+            <label for="price4">₱2,000 - ₱5,000</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="price5">
+            <label for="price5">Over ₱5,000</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PRODUCT GRID -->
+      <div class="product-grid" id="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image" style="position: relative;">
+            <span class="discount-badge">-49%</span>
+            <img src="/Assets/Category/O_NEAL_TRAILFINDER_MTB_HELMET.png" alt="O'NEAL TRAILFINDER MTB HELMET">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">O'NEAL TRAILFINDER MTB HELMET</h3>
+            <div class="product-price">
+              <span class="current-price">₱1,760.00</span>
+              <span class="original-price">₱3,500.00</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="review-count">(2 Reviews)</span>
+            </div>
+            <div class="color-options">
+              <div class="color-option" style="background-color: #cc0000;"></div>
+              <div class="color-option" style="background-color: #222;"></div>
+              <div class="color-option" style="background-color: #e67e22;"></div>
+              <div class="more-colors">+2</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image" style="position: relative;">
+            <span class="discount-badge">-50%</span>
+            <img src="/Assets/Category/O_NEAL_SONUS_MTB_HELMET.png" alt="O'NEAL SONUS MTB HELMET">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">O'NEAL SONUS MTB HELMET</h3>
+            <div class="product-price">
+              <span class="current-price">₱1,960.00</span>
+              <span class="original-price">₱3,950.00</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="review-count">(0 Reviews)</span>
+            </div>
+            <div class="color-options">
+              <div class="color-option" style="background-color: #222;"></div>
+              <div class="color-option" style="background-color: #3498db;"></div>
+              <div class="color-option" style="background-color: #e74c3c;"></div>
+              <div class="more-colors">+2</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/Assets/Category/MUC-OFF_MOTORCYCLE_BIKE_HELMET_FOAM_FRESH_CLEANER2.png" alt="MUC-OFF MOTORCYCLE/BIKE HELMET & VISOR CLEANER">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">MUC-OFF MOTORCYCLE/BIKE HELMET & VISOR CLEANER</h3>
+            <div class="product-price">
+              <span class="current-price">₱390.00</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="review-count">(0 Reviews)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/Assets/Category/MUC-OFF_MOTORCYCLE_BIKE_HELMET_FOAM_FRESH_CLEANER1.png" alt="MUC-OFF MOTORCYCLE/BIKE HELMET FOAM FRESH CLEANER">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">MUC-OFF MOTORCYCLE/BIKE HELMET FOAM FRESH CLEANER</h3>
+            <div class="product-price">
+              <span class="current-price">₱490.00</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="review-count">(0 Reviews)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-image" style="position: relative;">
+            <span class="discount-badge">-30%</span>
+            <img src="/Assets/Category/FOX_RACING_GLOVES.png" alt="FOX RACING GLOVES">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">FOX RACING GLOVES</h3>
+            <div class="product-price">
+              <span class="current-price">₱890.00</span>
+              <span class="original-price">₱1,290.00</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span class="review-count">(8 Reviews)</span>
+            </div>
+            <div class="color-options">
+              <div class="color-option" style="background-color: #222;"></div>
+              <div class="color-option" style="background-color: #e74c3c;"></div>
+              <div class="more-colors">+3</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/Assets/Category/ALPINESTARS_BIONIC_JACKET.png" alt="ALPINESTARS BIONIC JACKET">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">ALPINESTARS BIONIC JACKET</h3>
+            <div class="product-price">
+              <span class="current-price">₱6,950.00</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="review-count">(12 Reviews)</span>
+            </div>
+            <div class="color-options">
+              <div class="color-option" style="background-color: #222;"></div>
+              <div class="color-option" style="background-color: #3498db;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FLOATING BUTTONS -->
+  <div class="floating-chat">
+    <button class="btn btn-danger rounded-circle p-3">
+      <i class="bi bi-chat-fill"></i>
+    </button>
+  </div>
+
+  <div id="footer"></div>
+  
+  <!-- JAVASCRIPT -->
+<script src="Shop.js"></script>
+<script>
+    // Load the navbar
+    fetch('includes/navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  
+    // Load the footer
+    fetch('/includes/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>

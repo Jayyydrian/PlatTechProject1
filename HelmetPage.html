@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST Moto & Gear - Helmets</title>
+    <link rel="stylesheet" href="HelmetPage.css">
+
+    <link rel="stylesheet" href="../includes/footer.css">
+    <link rel="stylesheet" href="../includes/navbar.css">
+  
+</head>
+<body>
+    <div id="navbar"></div>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Premium Motorcycle Helmets</h2>
+            <p>Protect your ride with our extensive collection of high-quality helmets designed for safety, comfort, and style.</p>
+        </div>
+    </section>
+    
+    <section class="safety-section">
+        <div class="safety-content">
+            <h2>Safety Starts With Your Helmet</h2>
+            <p>Your helmet is the most important piece of safety equipment you'll ever own as a rider. At ST Moto & Gear, we understand that the right helmet can be the difference between life-changing injury and walking away from an accident.</p>
+            <p>Our premium selection of motorcycle helmets combines cutting-edge safety technology with comfort and style. Each helmet in our collection meets or exceeds DOT, ECE, and SNELL safety standards, providing the highest level of protection for your rides.</p>
+            <p>From full-face options offering complete protection to modular helmets providing versatility for everyday riders, to lightweight options for sport enthusiasts – we have helmets designed for every riding style and preference. Our helmets feature advanced ventilation systems, noise reduction technology, anti-fog visors, and comfortable padding to enhance your riding experience.</p>
+            <p>Remember, a quality helmet isn't just an accessory – it's essential life-saving equipment that protects your most valuable asset: you.</p>
+        </div>
+    </section>
+    
+    <section class="products">
+        <h2>Featured Helmets</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="/api/placeholder/300/220" alt="Full Face Helmet">
+                <div class="product-info">
+                    <h3>ST Pro Racing Full Face Helmet</h3>
+                    <div class="price">$299.99</div>
+                    <p>Premium lightweight carbon fiber construction with advanced ventilation system.</p>
+                    <div class="ratings">★★★★★</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="/api/placeholder/300/220" alt="Modular Helmet">
+                <div class="product-info">
+                    <h3>AirGuard Modular Flip-Up Helmet</h3>
+                    <div class="price">$249.99</div>
+                    <p>Versatile modular design with noise-cancellation and anti-fog visor.</p>
+                    <div class="ratings">★★★★☆</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="/api/placeholder/300/220" alt="Off-Road Helmet">
+                <div class="product-info">
+                    <h3>TerraForce Off-Road Helmet</h3>
+                    <div class="price">$189.99</div>
+                    <p>Rugged design for adventure riding with removable peak and extra-wide visor.</p>
+                    <div class="ratings">★★★★★</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="/api/placeholder/300/220" alt="Street Helmet">
+                <div class="product-info">
+                    <h3>CityRider Urban Helmet</h3>
+                    <div class="price">$159.99</div>
+                    <p>Lightweight everyday helmet with built-in communication system compatibility.</p>
+                    <div class="ratings">★★★★☆</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="/api/placeholder/300/220" alt="Sport Helmet">
+                <div class="product-info">
+                    <h3>Velocity Racing Helmet</h3>
+                    <div class="price">$329.99</div>
+                    <p>Aerodynamic design for sport riding with emergency quick-release system.</p>
+                    <div class="ratings">★★★★★</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="/api/placeholder/300/220" alt="Half Helmet">
+                <div class="product-info">
+                    <h3>Freedom Cruiser Half Helmet</h3>
+                    <div class="price">$129.99</div>
+                    <p>Classic design with modern safety features and removable comfort liner.</p>
+                    <div class="ratings">★★★★☆</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="shop-btn-container">
+            <a href="#" class="shop-btn">SHOP ALL HELMETS</a>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+  
+    <!-- JAVASCRIPT -->
+  <script src="Shop.js"></script>
+  <script>
+      // Load the navbar
+      fetch('includes/navbar.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('navbar').innerHTML = data);
+    
+      // Load the footer
+      fetch('/includes/footer.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+</body>
+</html>
