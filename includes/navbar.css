@@ -1,0 +1,99 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+  }
+  
+#main-nav {
+    background-color: white;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-brand img.logo {
+    max-height: 70px;
+  }
+  
+  .navbar-brand .logo-text {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .logo-text {
+    color: #000000; /* MotoWorld red color */
+      font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  /* Search Bar Styling */
+  .search-input {
+    border: 1px solid #e0e0e0;
+    padding-left: 1rem;
+  }
+  
+  .search-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-left: none;
+  }
+  
+  /* Icon Styling */
+  .nav-icons .icon-link {
+    color: #333;
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+  
+  /* Category Navigation Styling */
+  .category-nav {
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .category-menu {
+    padding: 0.3rem 0;
+  }
+  
+  .category-menu .nav-link {
+    color: #333;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.3rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .category-menu .nav-link:hover {
+    color: #ff3232; /* MotoWorld red color */
+  }
+  
+  .sale-link {
+    color: #ff3232 !important; /* MotoWorld red color */
+    font-weight: 700 !important;
+  }
+  
+  
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .category-menu {
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+    
+    .category-menu .nav-item {
+      margin: 0.25rem 0;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 0.5rem;
+    }
+  }

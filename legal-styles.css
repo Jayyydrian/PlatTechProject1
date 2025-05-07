@@ -1,0 +1,57 @@
+/* Legal Pages Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main content */
+.legal-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px 50px;
+}
+
+.legal-page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.legal-section-title {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.legal-content-paragraph {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.legal-subsection-title {
+    margin: 30px 0 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .legal-container {
+        padding: 0 15px 30px;
+        margin: 20px auto;
+    }
+}
