@@ -1,199 +1,181 @@
+// Import products data
+import products from './products.js';
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Elements
-  const gridView = document.getElementById('grid-view');
-  const listView = document.getElementById('list-view');
-  const productGrid = document.getElementById('product-grid');
-  const sortSelect = document.querySelector('.sort-by select');
-  const categoryFilters = document.querySelectorAll('input[name="category"]');
-  
-  // Get proper references to the filter checkboxes
-  const brandFilters = document.querySelectorAll('.filter-group:nth-of-type(2) input[type="checkbox"]');
-  const priceFilters = document.querySelectorAll('.filter-group:nth-of-type(3) input[type="checkbox"]');
-  
-  // Product data (in a real application, this might come from an API)
-  const products = Array.from(document.querySelectorAll('.product-card')).map(card => {
-    const name = card.querySelector('.product-name').textContent;
-    const currentPrice = parseFloat(card.querySelector('.current-price').textContent.replace('₱', '').replace(',', ''));
-    const originalPriceElement = card.querySelector('.original-price');
-    const originalPrice = originalPriceElement ? parseFloat(originalPriceElement.textContent.replace('₱', '').replace(',', '')) : currentPrice;
-    const discount = originalPriceElement ? Math.round((originalPrice - currentPrice) / originalPrice * 100) : 0;
-    const rating = card.querySelectorAll('.stars .fas.fa-star').length;
-    const reviewCount = parseInt(card.querySelector('.review-count').textContent.match(/\d+/)[0]);
+    // Initialize the product grid
+    initializeProductGrid();
     
-    // Determine category based on product name (in a real app, you'd have this data properly structured)
-    let category = '';
-    if (name.includes('HELMET')) {
-      category = 'helmets';
-    } else if (name.includes('GLOVES')) {
-      category = 'apparel';
-    } else if (name.includes('JACKET')) {
-      category = 'apparel';
-    } else if (name.includes('CLEANER')) {
-      category = 'accessories';
-    } else {
-      category = 'parts';
-    }
+    // Set up filter listeners
+    setupFilters();
+});
+
+function initializeProductGrid() {
+    const productsGrid = document.getElementById('products-grid');
+    productsGrid.innerHTML = ''; // Clear existing products
     
-    // Determine brand based on product name
-    let brand = '';
-    if (name.includes('O\'NEAL')) {
-      brand = 'brand1';
-    } else if (name.includes('MUC-OFF')) {
-      brand = 'brand2';
-    } else if (name.includes('ALPINESTARS')) {
-      brand = 'brand3';
-    } else if (name.includes('FOX')) {
-      brand = 'brand4';
-    } else if (name.includes('BELL')) {
-      brand = 'brand5';
-    }
+    // Convert products object to array for easier filtering/sorting
+    const productsArray = Object.values(products);
     
-    // Get price range
-    let priceRange = '';
-    if (currentPrice < 500) {
-      priceRange = 'price1'; // Under ₱500
-    } else if (currentPrice >= 500 && currentPrice < 1000) {
-      priceRange = 'price2'; // ₱500 - ₱1,000
-    } else if (currentPrice >= 1000 && currentPrice < 2000) {
-      priceRange = 'price3'; // ₱1,000 - ₱2,000
-    } else if (currentPrice >= 2000 && currentPrice < 5000) {
-      priceRange = 'price4'; // ₱2,000 - ₱5,000
-    } else {
-      priceRange = 'price5'; // Over ₱5,000
-    }
-    
-    return {
-      element: card,
-      name,
-      currentPrice,
-      originalPrice,
-      discount,
-      rating,
-      reviewCount,
-      category,
-      brand,
-      priceRange,
-      visible: true
-    };
-  });
-  
-  // View toggle functionality
-  gridView.addEventListener('click', function() {
-    productGrid.classList.remove('list-view');
-    productGrid.classList.add('grid-view');
-    gridView.classList.add('active');
-    listView.classList.remove('active');
-  });
-  
-  listView.addEventListener('click', function() {
-    productGrid.classList.remove('grid-view');
-    productGrid.classList.add('list-view');
-    listView.classList.add('active');
-    gridView.classList.remove('active');
-  });
-  
-  // Default to grid view
-  gridView.click();
-  
-  // Apply filters and sort
-  function applyFiltersAndSort() {
-    // Get selected filters
-    const selectedCategory = document.querySelector('input[name="category"]:checked')?.id || null;
-    
-    // Get selected brands
-    const selectedBrands = Array.from(brandFilters)
-      .filter(input => input.checked)
-      .map(input => input.id);
-    
-    // Get selected price ranges
-    const selectedPriceRanges = Array.from(priceFilters)
-      .filter(input => input.checked)
-      .map(input => input.id);
-    
-    // Get sort option
-    const sortOption = sortSelect.value;
+    // Get current filter values
+    const categoryFilter = document.getElementById('category-filter').value;
+    const brandFilter = document.getElementById('brand-filter').value;
+    const sortBy = document.getElementById('sort-by').value;
     
     // Apply filters
-    products.forEach(product => {
-      let visible = true;
-      
-      // Category filter
-      if (selectedCategory && product.category !== selectedCategory) {
-        visible = false;
-      }
-      
-      // Brand filter
-      if (selectedBrands.length > 0 && !selectedBrands.includes(product.brand)) {
-        visible = false;
-      }
-      
-      // Price range filter
-      if (selectedPriceRanges.length > 0 && !selectedPriceRanges.includes(product.priceRange)) {
-        visible = false;
-      }
-      
-      product.visible = visible;
-    });
+    let filteredProducts = productsArray;
     
-    // Sort products
-    products.sort((a, b) => {
-      switch(sortOption) {
-        case 'Price: Low to High':
-          return a.currentPrice - b.currentPrice;
-        case 'Price: High to Low':
-          return b.currentPrice - a.currentPrice;
-        case 'Newest':
-          // Since we don't have date info, this is a placeholder
-          return 0;
-        case 'Best Selling':
-          return b.reviewCount - a.reviewCount;
-        case 'Featured':
-        default:
-          // For featured, prioritize higher ratings and discounts
-          const aScore = (a.rating * 10) + a.discount;
-          const bScore = (b.rating * 10) + b.discount;
-          return bScore - aScore;
-      }
-    });
-    
-    // Update DOM
-    updateProductDisplay();
-  }
-  
-  function updateProductDisplay() {
-    // Clear product grid
-    productGrid.innerHTML = '';
-    
-    // Add visible products in sorted order
-    products.filter(product => product.visible).forEach(product => {
-      productGrid.appendChild(product.element);
-    });
-    
-    // Handle empty results
-    if (!products.some(product => product.visible)) {
-      const noResults = document.createElement('div');
-      noResults.className = 'no-results';
-      noResults.textContent = 'No products match your filters. Please try different filter options.';
-      productGrid.appendChild(noResults);
+    // Filter by category
+    if (categoryFilter !== 'all') {
+        filteredProducts = filteredProducts.filter(product => product.category === categoryFilter);
     }
-  }
-  
-  // Add event listeners for filters - each filter automatically applies when changed
-  categoryFilters.forEach(filter => {
-    filter.addEventListener('change', applyFiltersAndSort);
-  });
-  
-  brandFilters.forEach(filter => {
-    filter.addEventListener('change', applyFiltersAndSort);
-  });
-  
-  priceFilters.forEach(filter => {
-    filter.addEventListener('change', applyFiltersAndSort);
-  });
-  
-  // Add event listener for sort
-  sortSelect.addEventListener('change', applyFiltersAndSort);
-  
-  // Initial application of filters and sort
-  applyFiltersAndSort();
-});
+    
+    // Filter by brand
+    if (brandFilter !== 'all') {
+        filteredProducts = filteredProducts.filter(product => product.brand === brandFilter);
+    }
+    
+    // Apply sorting
+    switch (sortBy) {
+        case 'price-low':
+            filteredProducts.sort((a, b) => a.currentPrice - b.currentPrice);
+            break;
+        case 'price-high':
+            filteredProducts.sort((a, b) => b.currentPrice - a.currentPrice);
+            break;
+        case 'name-asc':
+            filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case 'name-desc':
+            filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+        default:
+            // 'featured' or any other default sorting
+            // We'll keep the original order
+            break;
+    }
+    
+    // Render filtered products
+    filteredProducts.forEach(product => {
+        const productCard = createProductCard(product);
+        productsGrid.appendChild(productCard);
+    });
+    
+    // Show message if no products found
+    if (filteredProducts.length === 0) {
+        productsGrid.innerHTML = `
+            <div class="no-products-message">
+                <h3>No products found</h3>
+                <p>Try changing your filter settings</p>
+            </div>
+        `;
+    }
+}
+
+function createProductCard(product) {
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+    
+    // Create product image container
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'product-image';
+    
+    // Create product image
+    const productImage = document.createElement('img');
+    productImage.src = product.mainImage;
+    productImage.alt = product.name;
+    imageContainer.appendChild(productImage);
+    
+    // Add discount badge if applicable
+    if (product.discount) {
+        const discountBadge = document.createElement('div');
+        discountBadge.className = 'discount-badge';
+        discountBadge.textContent = `-${product.discount}%`;
+        imageContainer.appendChild(discountBadge);
+    }
+    
+    // Create product details section
+    const productDetails = document.createElement('div');
+    productDetails.className = 'product-details';
+    
+    // Create product name
+    const productName = document.createElement('h3');
+    productName.className = 'product-name';
+    productName.textContent = product.name;
+    productDetails.appendChild(productName);
+    
+    // Create rating stars
+    const ratingContainer = document.createElement('div');
+    ratingContainer.className = 'rating';
+    
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars';
+    
+    for (let i = 1; i <= 5; i++) {
+        const starIcon = document.createElement('i');
+        if (i <= product.reviews.averageRating) {
+            starIcon.className = 'fas fa-star'; // Filled star
+        } else if (i - 0.5 <= product.reviews.averageRating) {
+            starIcon.className = 'fas fa-star-half-alt'; // Half star
+        } else {
+            starIcon.className = 'far fa-star'; // Empty star
+        }
+        starsContainer.appendChild(starIcon);
+    }
+    ratingContainer.appendChild(starsContainer);
+    
+    const reviewCount = document.createElement('span');
+    reviewCount.className = 'review-count';
+    reviewCount.textContent = `(${product.reviews.count})`;
+    ratingContainer.appendChild(reviewCount);
+    
+    productDetails.appendChild(ratingContainer);
+    
+    // Create price container
+    const priceContainer = document.createElement('div');
+    priceContainer.className = 'price-container';
+    
+    const currentPrice = document.createElement('span');
+    currentPrice.className = 'current-price';
+    currentPrice.textContent = `₱${product.currentPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    priceContainer.appendChild(currentPrice);
+    
+    if (product.discount) {
+        const originalPrice = document.createElement('span');
+        originalPrice.className = 'original-price';
+        originalPrice.textContent = `₱${product.originalPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+        priceContainer.appendChild(originalPrice);
+    }
+    
+    productDetails.appendChild(priceContainer);
+    
+    // Create view details button
+    const viewDetailsButton = document.createElement('a');
+    viewDetailsButton.className = 'view-details-btn';
+    viewDetailsButton.textContent = 'View Details';
+    viewDetailsButton.href = `productPage.html?id=${product.id}`;
+    productDetails.appendChild(viewDetailsButton);
+    
+    // Assemble the product card
+    productCard.appendChild(imageContainer);
+    productCard.appendChild(productDetails);
+    
+    // Add click handler for the whole card
+    productCard.addEventListener('click', (e) => {
+        // Prevent triggering if clicking on the button
+        if (e.target !== viewDetailsButton) {
+            window.location.href = `productPage.html?id=${product.id}`;
+        }
+    });
+    
+    return productCard;
+}
+
+function setupFilters() {
+    const categoryFilter = document.getElementById('category-filter');
+    const brandFilter = document.getElementById('brand-filter');
+    const sortBy = document.getElementById('sort-by');
+    
+    categoryFilter.addEventListener('change', initializeProductGrid);
+    brandFilter.addEventListener('change', initializeProductGrid);
+    sortBy.addEventListener('change', initializeProductGrid);
+}
