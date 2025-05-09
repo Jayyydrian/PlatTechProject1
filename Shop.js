@@ -1,6 +1,7 @@
 // Import products data
 import products from './products.js';
 
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the product grid
     initializeProductGrid();
