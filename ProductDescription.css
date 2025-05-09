@@ -470,3 +470,24 @@ body {
         width: 100%;
     }
 }
+
+.cart-message {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-message.show {
+    opacity: 1;
+    transform: translateX(0);
+}
