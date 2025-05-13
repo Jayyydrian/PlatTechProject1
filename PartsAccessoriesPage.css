@@ -1,0 +1,241 @@
+
+body {
+line-height: 1.6;
+color: #333;
+background-color: #f8f8f8;
+}
+h2, h3 {
+font-weight: 600;
+margin-bottom: 20px;
+color: #222;
+}
+p {
+margin-bottom: 15px;
+}
+/* Hero Section */
+.hero {
+position: relative;
+height: 400px;
+background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/400');
+background-size: cover;
+background-position: center;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+margin-bottom: 50px;
+}
+.hero-content {
+max-width: 800px;
+padding: 0 20px;
+}
+.hero h2 {
+font-size: 42px;
+margin-bottom: 20px;
+color: white;
+letter-spacing: 1px;
+}
+.hero p {
+font-size: 18px;
+max-width: 600px;
+margin: 0 auto;
+}
+/* Parts Introduction Section */
+.parts-intro-section {
+padding: 50px 20px;
+max-width: 1200px;
+margin: 0 auto 50px;
+text-align: center;
+}
+.parts-intro-content {
+max-width: 900px;
+margin: 0 auto;
+}
+.parts-intro-content h2 {
+font-size: 32px;
+margin-bottom: 30px;
+}
+.parts-intro-content p {
+font-size: 16px;
+line-height: 1.7;
+margin-bottom: 20px;
+}
+/* Parts Categories Section */
+.parts-categories-section {
+padding: 50px 20px 80px;
+max-width: 1200px;
+margin: 0 auto;
+}
+.parts-categories-section h2 {
+text-align: center;
+font-size: 32px;
+margin-bottom: 40px;
+}
+.parts-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+gap: 30px;
+margin-bottom: 50px;
+}
+.parts-card {
+background-color: white;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.parts-card {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.parts-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+display: block;
+}
+.parts-info {
+padding: 25px;
+}
+.parts-info h3 {
+font-size: 22px;
+margin-bottom: 15px;
+color: #222;
+}
+.parts-info p {
+font-size: 15px;
+margin-bottom: 20px;
+color: #555;
+line-height: 1.6;
+}
+.parts-features {
+font-size: 14px;
+color: #777;
+font-style: italic;
+padding-top: 15px;
+border-top: 1px solid #eee;
+}
+/* Shop Button */
+.shop-btn-container {
+text-align: center;
+margin-top: 40px;
+}
+.shop-btn {
+display: inline-block;
+padding: 14px 30px;
+background-color: #222;
+color: white;
+text-decoration: none;
+font-weight: 600;
+letter-spacing: 1px;
+border-radius: 4px;
+transition: background-color 0.3s ease;
+text-transform: uppercase;
+font-size: 16px;
+}
+.shop-btn {
+background-color: #cf0303;
+}
+/* Parts Benefits Section */
+.parts-benefits {
+padding: 70px 20px;
+background-color: #f1f1f1;
+text-align: center;
+}
+.parts-benefits h2 {
+font-size: 32px;
+margin-bottom: 50px;
+}
+.benefits-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 30px;
+max-width: 1200px;
+margin: 0 auto;
+}
+.benefit-item {
+padding: 30px 20px;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+transition: transform 0.3s ease;
+}
+.benefit-item {
+transform: translateY(-5px);
+}
+.benefit-icon {
+margin: 0 auto 20px;
+width: 80px;
+height: 80px;
+}
+.benefit-icon img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+.benefit-item h3 {
+font-size: 20px;
+margin-bottom: 15px;
+color: #222;
+}
+.benefit-item p {
+font-size: 15px;
+color: #555;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+.parts-grid {
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+}
+@media (max-width: 768px) {
+.hero {
+height: 350px;
+}
+.hero h2 {
+    font-size: 32px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+.parts-intro-content h2, 
+.parts-categories-section h2, 
+.parts-benefits h2 {
+    font-size: 28px;
+}
+
+.parts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.benefits-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+}
+@media (max-width: 576px) {
+.hero {
+height: 300px;
+}
+.hero h2 {
+    font-size: 28px;
+}
+
+.parts-intro-content h2, 
+.parts-categories-section h2, 
+.parts-benefits h2 {
+    font-size: 24px;
+}
+
+.parts-grid, 
+.benefits-grid {
+    grid-template-columns: 1fr;
+}
+
+.shop-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+}
+}
