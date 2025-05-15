@@ -36,9 +36,9 @@
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
               <h5 class="footer-heading">CUSTOMER CARE</h5>
               <ul class="footer-links">
-                <li><a href="./terms-condition.php">Terms & Conditions</a></li>
-                <li><a href="../privacy.php">Privacy Policy</a></li>
-                <li><a href="../faqs.php">FAQs</a></li>
+                <li><a href="terms-condition.php">Terms & Conditions</a></li>
+                <li><a href="privacy.php">Privacy Policy</a></li>
+                <li><a href="faqs.php">FAQs</a></li>
               </ul>
             </div>
             
@@ -48,8 +48,8 @@
               <ul class="footer-links">
                 <li><a href="#">Motorcycle</a></li>
                 <li><a href="#">SALE</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="News.php">News</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
               </ul>
             </div>
             

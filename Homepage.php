@@ -88,16 +88,16 @@ crossorigin=""/>
         <div class="product-box text-start ad-container">
           <h3 class="ad-title">Dainese Pro Gear</h3>
           <p class="ad-description">Dainese's Pro-Armor gear offers a compelling combination of safety, comfort, and versatility...</p>
-          <button class="btn btn-warning ad-cta">Shop Now</button>
+          <a href="Shop.php" class="btn btn-warning ad-cta">Shop Now</a>
         </div>
       </div>
   
-      <!-- Product Container 1 -->
+      <!-- Product Container 1 - Modified to be non-clickable -->
       <div class="col-md-4 text-center">
         <div class="product-box">
-          <a href="product1.php" class="product-image-container">
-            <img src="Assets/Product/Dainese_Steel-Pro.png" alt="Helmet Product" class="product-image">
-          </a>
+          <div class="product-image-container">
+            <img src="Assets/Product/Dainese_Carbon_3_Short_Gloves.png" alt="Helmet Product" class="product-image">
+          </div>
           <h3>₱4,999.00</h3>
           <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
             <div>
@@ -112,12 +112,12 @@ crossorigin=""/>
         </div>
       </div>
   
-      <!-- Product Container 2 -->
+      <!-- Product Container 2 - Modified to be non-clickable -->
       <div class="col-md-4 text-center">
         <div class="product-box">
-          <a href="product2.php" class="product-image-container">
+          <div class="product-image-container">
             <img src="Assets/Product/dainese-super-speed-leather-trousers-black-white.png" alt="Another Product" class="product-image">
-          </a>
+          </div>
           <h3>₱3,499.00</h3>
           <div class="star-rating mt-2 d-flex justify-content-center align-items-center gap-2">
             <div>
@@ -140,7 +140,7 @@ crossorigin=""/>
         <div class="section-title">
           <h3 class="news-heading m-0">News</h3>
         </div>
-        <a href="#" class="view-all-link">View all</a>
+        <a href="News.php" class="view-all-link">View all</a>
       </div>
       
       <div class="row">

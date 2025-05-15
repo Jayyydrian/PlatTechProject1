@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ST Moto & Gear - Helmets</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="HelmetPage.css">
 
     <link rel="stylesheet" href="./includes/footer.css">
@@ -36,63 +36,27 @@
         <h2>Featured Helmets</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="/api/placeholder/300/220" alt="Full Face Helmet">
-                <div class="product-info">
-                    <h3>ST Pro Racing Full Face Helmet</h3>
-                    <div class="price">$299.99</div>
-                    <p>Premium lightweight carbon fiber construction with advanced ventilation system.</p>
-                    <div class="ratings">★★★★★</div>
-                </div>
+                <img src="./Assets//Product/Shoei_GT-AIR_II_Helmet.png" alt="Full Face Helmet">
             </div>
             
             <div class="product-card">
-                <img src="/api/placeholder/300/220" alt="Modular Helmet">
-                <div class="product-info">
-                    <h3>AirGuard Modular Flip-Up Helmet</h3>
-                    <div class="price">$249.99</div>
-                    <p>Versatile modular design with noise-cancellation and anti-fog visor.</p>
-                    <div class="ratings">★★★★☆</div>
-                </div>
+                <img src="./Assets/Product/O_neal_Sierra_II_Adventure_Helmet.png" alt="Modular Helmet">
             </div>
             
             <div class="product-card">
-                <img src="/api/placeholder/300/220" alt="Off-Road Helmet">
-                <div class="product-info">
-                    <h3>TerraForce Off-Road Helmet</h3>
-                    <div class="price">$189.99</div>
-                    <p>Rugged design for adventure riding with removable peak and extra-wide visor.</p>
-                    <div class="ratings">★★★★★</div>
-                </div>
+                <img src="./Assets/Product/HJC_RPHA_11_Pro_Helmet.png" alt="Off-Road Helmet">
             </div>
             
             <div class="product-card">
-                <img src="/api/placeholder/300/220" alt="Street Helmet">
-                <div class="product-info">
-                    <h3>CityRider Urban Helmet</h3>
-                    <div class="price">$159.99</div>
-                    <p>Lightweight everyday helmet with built-in communication system compatibility.</p>
-                    <div class="ratings">★★★★☆</div>
-                </div>
+                <img src="./Assets/Product/Arai_RX-V_Race_Helmet.png" alt="Street Helmet">
             </div>
             
             <div class="product-card">
-                <img src="/api/placeholder/300/220" alt="Sport Helmet">
-                <div class="product-info">
-                    <h3>Velocity Racing Helmet</h3>
-                    <div class="price">$329.99</div>
-                    <p>Aerodynamic design for sport riding with emergency quick-release system.</p>
-                    <div class="ratings">★★★★★</div>
-                </div>
+                <img src="./Assets/Product/Bell_Qualifier_DLX_Mips_Helmet.png" alt="Sport Helmet">
             </div>
             
             <div class="product-card">
-                <img src="/api/placeholder/300/220" alt="Half Helmet">
-                <div class="product-info">
-                    <h3>Freedom Cruiser Half Helmet</h3>
-                    <div class="price">$129.99</div>
-                    <p>Classic design with modern safety features and removable comfort liner.</p>
-                    <div class="ratings">★★★★☆</div>
-                </div>
+                <img src="./Assets/Product/AGV_K6_Full_Face_Helmet.webp" alt="Half Helmet">
             </div>
         </div>
         
@@ -104,17 +68,17 @@
     <div id="footer"></div>
   
     <!-- JAVASCRIPT -->
-  <script src="Shop.js"></script>
-  <script>
-      // Load the navbar
-      fetch('./includes/navbar.php')
-        .then(res => res.text())
-        .then(data => document.getElementById('navbar').innerHTML = data);
-    
-      // Load the footer
-      fetch('./includes/footer.php')
-        .then(res => res.text())
-        .then(data => document.getElementById('footer').innerHTML = data);
+    <script src="Shop.js"></script>
+    <script>
+        // Load the navbar
+        fetch('./includes/navbar.php')
+          .then(res => res.text())
+          .then(data => document.getElementById('navbar').innerHTML = data);
+      
+        // Load the footer
+        fetch('./includes/footer.php')
+          .then(res => res.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
     </script>
 
 </body>

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy</title>
     <!-- Include your existing CSS files here -->
-    <link rel="stylesheet" href="../includes/footer.css">
-    <link rel="stylesheet" href="../includes/navbar.css">
+    <link rel="stylesheet" href="./includes/footer.css">
+    <link rel="stylesheet" href="./includes/navbar.css">
     
     <!-- Include the separate legal styles CSS file -->
     <link rel="stylesheet" href="legal-styles.css">
@@ -65,12 +65,12 @@
     <!-- Include any JavaScript files if needed -->
     <script>
         // Load the navbar
-        fetch('includes/navbar.html')
+        fetch('includes/navbar.php')
           .then(res => res.text())
           .then(data => document.getElementById('navbar').innerHTML = data);
       
         // Load the footer
-        fetch('includes/footer.html')
+        fetch('includes/footer.php')
           .then(res => res.text())
           .then(data => document.getElementById('footer').innerHTML = data);
       </script>
