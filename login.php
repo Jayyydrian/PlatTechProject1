@@ -1,3 +1,48 @@
+<?php
+session_start();
+
+// Database connection configuration
+$host = 'localhost';
+$dbname = 'stmoto_db';
+$dbuser = 'root';
+$dbpass = '';
+
+// Initialize error message variable
+$error_message = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    try {
+        $conn = new PDO("mysql:host=$host;dbname=$dbname", $dbuser, $dbpass);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $email = trim($_POST['email']); // Trim whitespace
+        $password = $_POST['password'];
+
+        // Prepare SQL statement to prevent SQL injection
+        $stmt = $conn->prepare("SELECT * FROM tbl_acc_user WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            // Since passwords are stored as plain text in your database
+            if ($password === $user['password']) {
+                // Login successful
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                header("Location: Homepage.php"); // Redirect to dashboard or home page
+                exit();
+            } else {
+                $error_message = "Invalid email or password";
+            }
+        } else {
+            $error_message = "Invalid email or password";
+        }
+    } catch(PDOException $e) {
+        $error_message = "Connection failed: " . $e->getMessage();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +64,7 @@
             </div>
             
             <div class="tagline">
-                <p>Not Just Gear. It’s a Lifestyle.</p>
+                <p>Not Just Gear. It's a Lifestyle.</p>
                 <p>For Riders Who Live the Road.</p>
                 <p>Your Ride, Our Gear, One Mission.</p>
                 <p>Armor Up for Every Mile.</p>
@@ -58,21 +103,27 @@
             <div class="login-card">
                 <h2>Login</h2>
                 
-                <form class="login-form">
+                <form class="login-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <?php if (!empty($error_message)): ?>
+                        <div class="error-message" style="color: red; margin-bottom: 10px;">
+                            <?php echo $error_message; ?>
+                        </div>
+                    <?php endif; ?>
+
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Email address" required>
+                        <input type="email" id="email" name="email" placeholder="Email address" required>
                     </div>
                     
                     <div class="form-group">
-                        <input type="password" id="password" placeholder="Password" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
                     </div>
                     
                     <div class="form-options">
                         <div class="remember-me">
-                            <input type="checkbox" id="remember">
+                            <input type="checkbox" id="remember" name="remember" value="1">
                             <label for="remember">Remember me</label>
                         </div>
-                        <a href="#" class="forgot-password">Forgot password?</a>
+                        <a href="forgot-password.php" class="forgot-password">Forgot password?</a>
                     </div>
                     
                     <button type="submit" class="login-btn">LOGIN</button>
@@ -82,18 +133,18 @@
                     </div>
                     
                     <div class="social-login">
-                        <button class="social-login-btn facebook">
+                        <a href="facebook-auth.php" class="social-login-btn facebook">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#1877F2"></path>
                             </svg>
                             Facebook
-                        </button>
-                        <button class="social-login-btn google">
+                        </a>
+                        <a href="google-auth.php" class="social-login-btn google">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                                 <path d="M12.545 12.151L12.545 14.106L16.061 14.106C15.875 15.177 14.59 17.25 12.545 17.25C10.754 17.25 9.242 15.75 9.242 13.875C9.242 12 10.754 10.5 12.545 10.5C13.598 10.5 14.303 10.935 14.712 11.343L16.197 9.892C15.184 8.919 13.94 8.336 12.545 8.336C9.56 8.336 7.06 10.837 7.06 13.875C7.06 16.913 9.56 19.414 12.545 19.414C15.674 19.414 18 17.25 18 13.963C18 13.5 17.955 13.086 17.864 12.664L12.545 12.664L12.545 12.151Z" fill="#4285F4"></path>
                             </svg>
                             Google
-                        </button>
+                        </a>
                     </div>
                     
                     <p class="signup-link">Don't have an account? <a href="signup.php">Signup</a></p>
@@ -101,8 +152,6 @@
             </div>
         </div>
     </main>
-    
-    <!-- Your footer will be included/imported here -->
     
     <script>
         // Script for toggling password visibility
