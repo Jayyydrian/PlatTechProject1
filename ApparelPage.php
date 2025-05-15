@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ST Moto & Gear - Rider Apparel</title>
     <link rel="stylesheet" href="ApparelPage.css">
-    <link rel="stylesheet" href="../includes/footer.css">
-    <link rel="stylesheet" href="../includes/navbar.css">
+    <link rel="stylesheet" href="./includes/footer.css">
+    <link rel="stylesheet" href="./includes/navbar.css">
 </head>
 <body>
     <div id="navbar"></div>
@@ -31,7 +31,7 @@
         <h2>Featured Apparel Categories</h2>
         <div class="apparel-grid">
             <div class="apparel-card">
-                <img src="/api/placeholder/300/200" alt="Leather Jackets">
+                <img src="./Assets/Apparel/leather.jpg" alt="Leather Jackets">
                 <div class="apparel-info">
                     <h3>Leather Jackets</h3>
                     <p>Premium leather jackets crafted from top-grain cowhide and kangaroo leather, designed to provide maximum abrasion resistance and impact protection. Available with advanced armor systems and aerodynamic sport profiles or classic styling.</p>
@@ -40,7 +40,7 @@
             </div>
             
             <div class="apparel-card">
-                <img src="/api/placeholder/300/200" alt="Textile Jackets">
+                <img src="./Assets/Apparel/textile.jpg" alt="Textile Jackets">
                 <div class="apparel-info">
                     <h3>Textile Jackets</h3>
                     <p>Versatile textile jackets constructed with advanced materials like Cordura, Ballistic nylon, and Gore-Tex. Designed for all-weather protection with waterproof membranes, ventilation systems, and removable thermal liners for year-round riding.</p>
@@ -49,7 +49,7 @@
             </div>
             
             <div class="apparel-card">
-                <img src="/api/placeholder/300/200" alt="Riding Pants">
+                <img src="./Assets/Apparel/pantss.jpg" alt="Riding Pants">
                 <div class="apparel-info">
                     <h3>Riding Pants</h3>
                     <p>Purpose-built motorcycle pants ranging from full leather race pants to armored riding jeans and textile touring options. Engineered with reinforced impact zones, advanced armor, and ergonomic design for comfort in the riding position.</p>
@@ -58,7 +58,7 @@
             </div>
             
             <div class="apparel-card">
-                <img src="/api/placeholder/300/200" alt="Riding Jerseys">
+                <img src="./Assets/Apparel/jersey.jpg" alt="Riding Jerseys">
                 <div class="apparel-info">
                     <h3>Riding Jerseys</h3>
                     <p>Technical off-road jerseys designed for motocross and adventure riding. Constructed with moisture-wicking fabrics, extended rear profiles, and strategic ventilation to keep riders cool and comfortable during intense riding sessions.</p>
@@ -67,7 +67,7 @@
             </div>
             
             <div class="apparel-card">
-                <img src="/api/placeholder/300/200" alt="Riding Suits">
+                <img src="./Assets/Apparel/suits.jpeg" alt="Riding Suits">
                 <div class="apparel-info">
                     <h3>Riding Suits</h3>
                     <p>One and two-piece racing suits engineered for maximum protection at high speeds. Featuring premium leather construction, aerodynamic speed humps, pre-curved design, and extensive impact protection for track and aggressive street riding.</p>
@@ -76,7 +76,7 @@
             </div>
             
             <div class="apparel-card">
-                <img src="/api/placeholder/300/200" alt="Protective Layers">
+                <img src="./Assets/Apparel/layers.jpg" alt="Protective Layers">
                 <div class="apparel-info">
                     <h3>Protective Layers</h3>
                     <p>Technical base layers and armored shirts designed to enhance protection and comfort. From compression garments with integrated cooling technology to armored shirts with removable protectors for versatile impact protection.</p>
@@ -95,7 +95,7 @@
         <div class="benefits-grid">
             <div class="benefit-item">
                 <div class="benefit-icon">
-                    <img src="/api/placeholder/80/80" alt="Protection Icon">
+                    <img src="./Assets/Apparel/shielder.png" alt="Protection Icon">
                 </div>
                 <h3>Superior Protection</h3>
                 <p>Our premium riding apparel is engineered with advanced impact protection systems, abrasion-resistant materials, and strategic reinforcement to help keep you safe in all riding conditions.</p>
@@ -103,7 +103,7 @@
             
             <div class="benefit-item">
                 <div class="benefit-icon">
-                    <img src="/api/placeholder/80/80" alt="Comfort Icon">
+                    <img src="./Assets/Apparel/comfort.png" alt="Comfort Icon">
                 </div>
                 <h3>All-Day Comfort</h3>
                 <p>Ergonomically designed specifically for the riding position, our apparel features stretch panels, pre-curved construction, and precise fit systems to ensure comfort during long rides.</p>
@@ -111,7 +111,7 @@
             
             <div class="benefit-item">
                 <div class="benefit-icon">
-                    <img src="/api/placeholder/80/80" alt="Weather Icon">
+                    <img src="./Assets/Apparel/sunny.png" alt="Weather Icon">
                 </div>
                 <h3>Weather Adaptation</h3>
                 <p>From waterproof membranes to advanced ventilation systems and removable thermal liners, our technical apparel keeps you comfortable in changing weather conditions.</p>
@@ -119,7 +119,7 @@
             
             <div class="benefit-item">
                 <div class="benefit-icon">
-                    <img src="/api/placeholder/80/80" alt="Style Icon">
+                    <img src="./Assets/Apparel/zippy.png" alt="Style Icon">
                 </div>
                 <h3>Distinctive Style</h3>
                 <p>Our riding apparel combines technical performance with thoughtful design and distinctive aesthetics, ensuring you look as good as you feel on and off the bike.</p>
@@ -133,12 +133,12 @@
     <script src="Shop.js"></script>
     <script>
         // Load the navbar
-        fetch('../includes/navbar.html')
+        fetch('./includes/navbar.php')
             .then(res => res.text())
             .then(data => document.getElementById('navbar').innerHTML = data);
         
         // Load the footer
-        fetch('../includes/footer.html')
+        fetch('./includes/footer.php')
             .then(res => res.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - ST Moto & Gears</title>
-    <link rel="stylesheet" href="signup.css">
+    <title>Login - ST Moto & Gears</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <!-- Your navbar will be included/imported here -->
@@ -56,20 +56,16 @@
         
         <div class="right-section">
             <div class="login-card">
-                <h2>Create your account</h2>
+                <h2>Login</h2>
                 
                 <form class="login-form">
                     <div class="form-group">
-                        <div class="form-group">
-                            <input type="text" id="username" placeholder="Username" required>
-                        </div>
                         <input type="email" id="email" placeholder="Email address" required>
                     </div>
                     
                     <div class="form-group">
                         <input type="password" id="password" placeholder="Password" required>
                     </div>
-                    
                     
                     <div class="form-options">
                         <div class="remember-me">
@@ -79,7 +75,7 @@
                         <a href="#" class="forgot-password">Forgot password?</a>
                     </div>
                     
-                    <button type="submit" class="login-btn">Signup</button>
+                    <button type="submit" class="login-btn">LOGIN</button>
                     
                     <div class="login-divider">
                         <span>OR</span>
@@ -100,7 +96,7 @@
                         </button>
                     </div>
                     
-                    <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
+                    <p class="signup-link">Don't have an account? <a href="signup.php">Signup</a></p>
                 </form>
             </div>
         </div>

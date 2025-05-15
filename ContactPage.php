@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Bikers Hub</title>
     <link rel="stylesheet" href="ContactPage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../includes/footer.css">
-    <link rel="stylesheet" href="../includes/navbar.css">
+    <link rel="stylesheet" href="./includes/footer.css">
+    <link rel="stylesheet" href="./includes/navbar.css">
 </head>
 <body>
 
@@ -144,14 +146,12 @@
             </div>
             
             <div class="store-location-card">
-                <h3>Our Showroom</h3>
+                <h3>Our Headquarters</h3>
                 <div class="store-location-info">
-                    <p><strong>Rider's Gear Emporium</strong></p>
-                    <p>456 Accessories Boulevard</p>
-                    <p>Gear District</p>
-                    <p>Rider City, RC 12345</p>
-                    <p>United States</p>
-                    <p>Plenty of parking with secure motorcycle spaces</p>
+                    <p><strong>ST Moto Trading</strong></p>
+                    <p>ST Moto & Gears Inc.,</p>
+                    <p>32nd Street corner 4th Avenue,</p>
+                    <p>RBonifacio Global City, Taguig, Philippines</p>
                 </div>
             </div>
         </div>
@@ -233,14 +233,15 @@
   
     <!-- JAVASCRIPT -->
     <script src="Shop.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Load the navbar
-        fetch('../includes/navbar.html')
+        fetch('./includes/navbar.php')
             .then(res => res.text())
             .then(data => document.getElementById('navbar').innerHTML = data);
         
         // Load the footer
-        fetch('../includes/footer.html')
+        fetch('./includes/footer.php')
             .then(res => res.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

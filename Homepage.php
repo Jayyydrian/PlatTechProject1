@@ -9,8 +9,8 @@
    <link rel="stylesheet" href="Homepage.css" />
 
   <!-- Include your existing CSS files here -->
-  <link rel="stylesheet" href="../includes/footer.css">
-  <link rel="stylesheet" href="../includes/navbar.css">
+  <link rel="stylesheet" href="./includes/footer.css">
+  <link rel="stylesheet" href="./includes/navbar.css">
 
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -95,7 +95,7 @@ crossorigin=""/>
       <!-- Product Container 1 -->
       <div class="col-md-4 text-center">
         <div class="product-box">
-          <a href="product1.html" class="product-image-container">
+          <a href="product1.php" class="product-image-container">
             <img src="Assets/Product/Dainese_Steel-Pro.png" alt="Helmet Product" class="product-image">
           </a>
           <h3>₱4,999.00</h3>
@@ -115,7 +115,7 @@ crossorigin=""/>
       <!-- Product Container 2 -->
       <div class="col-md-4 text-center">
         <div class="product-box">
-          <a href="product2.html" class="product-image-container">
+          <a href="product2.php" class="product-image-container">
             <img src="Assets/Product/dainese-super-speed-leather-trousers-black-white.png" alt="Another Product" class="product-image">
           </a>
           <h3>₱3,499.00</h3>
@@ -233,12 +233,12 @@ crossorigin=""/>
 <script src="map.js"></script>
 <script>
   // Load the navbar
-  fetch('includes/navbar.html')
+  fetch('./includes/navbar.php')
     .then(res => res.text())
     .then(data => document.getElementById('navbar').innerHTML = data);
 
   // Load the footer
-  fetch('/includes/footer.html')
+  fetch('./includes/footer.php')
     .then(res => res.text())
     .then(data => document.getElementById('footer').innerHTML = data);
 </script>

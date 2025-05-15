@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ST Moto & Gear - Helmets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="HelmetPage.css">
 
-    <link rel="stylesheet" href="../includes/footer.css">
-    <link rel="stylesheet" href="../includes/navbar.css">
+    <link rel="stylesheet" href="./includes/footer.css">
+    <link rel="stylesheet" href="./includes/navbar.css">
   
 </head>
 <body>
@@ -95,7 +97,7 @@
         </div>
         
         <div class="shop-btn-container">
-            <a href="Shop.html" class="shop-btn">SHOP NOW</a>
+            <a href="Shop.php" class="shop-btn">SHOP NOW</a>
         </div>
     </section>
 
@@ -105,12 +107,12 @@
   <script src="Shop.js"></script>
   <script>
       // Load the navbar
-      fetch('includes/navbar.html')
+      fetch('./includes/navbar.php')
         .then(res => res.text())
         .then(data => document.getElementById('navbar').innerHTML = data);
     
       // Load the footer
-      fetch('/includes/footer.html')
+      fetch('./includes/footer.php')
         .then(res => res.text())
         .then(data => document.getElementById('footer').innerHTML = data);
     </script>

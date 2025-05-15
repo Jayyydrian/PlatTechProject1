@@ -1,18 +1,3 @@
-<?php
-// Database connection
-$servername = "localhost";
-$username = "root"; // default XAMPP username
-$password = ""; // default XAMPP password is empty
-$dbname = "motoworld"; // your database name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,12 +36,9 @@ if ($conn->connect_error) {
             <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
               <h5 class="footer-heading">CUSTOMER CARE</h5>
               <ul class="footer-links">
-                <li><a href="../terms-condition.html">Terms & Conditions</a></li>
-                <li><a href="../privacy.html">Privacy Policy</a></li>
-                <li><a href="#">Payment Policy</a></li>
-                <li><a href="#">Shipping & Delivery Policy</a></li>
-                <li><a href="#">Return, Exchange, Cancellation & Refund Policy</a></li>
-                <li><a href="../faqs.html">FAQs</a></li>
+                <li><a href="./terms-condition.php">Terms & Conditions</a></li>
+                <li><a href="../privacy.php">Privacy Policy</a></li>
+                <li><a href="../faqs.php">FAQs</a></li>
               </ul>
             </div>
             
@@ -65,12 +47,9 @@ if ($conn->connect_error) {
               <h5 class="footer-heading">QUICK LINKS</h5>
               <ul class="footer-links">
                 <li><a href="#">Motorcycle</a></li>
-                <li><a href="#">Bicycle</a></li>
                 <li><a href="#">SALE</a></li>
-                <li><a href="#">Stores</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">BE A DEALER</a></li>
               </ul>
             </div>
             
@@ -125,7 +104,3 @@ if ($conn->connect_error) {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-<?php
-// Close connection at the end of the file
-$conn->close();
-?>

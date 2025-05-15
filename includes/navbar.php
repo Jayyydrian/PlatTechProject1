@@ -1,18 +1,3 @@
-<?php
-// Database connection
-$servername = "localhost";
-$username = "root"; // default XAMPP username
-$password = ""; // default XAMPP password is empty
-$dbname = "motoworld"; // your database name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,10 +33,10 @@ if ($conn->connect_error) {
       
           <!-- User Account & Cart Icons -->
           <div class="nav-icons d-flex align-items-center">
-            <a href="#" class="icon-link me-3">
+            <a href="./login.php" class="icon-link me-3">
               <i class="bi bi-person"></i>
             </a>
-            <a href="cart.php" class="icon-link">
+            <a href="./cart.php" class="icon-link">
               <i class="bi bi-cart3"></i>
             </a>
           </div>
@@ -69,21 +54,21 @@ if ($conn->connect_error) {
               <ul class="navbar-nav category-menu w-100 d-flex justify-content-between">
                 <li class="nav-item dropdown">
                   <li class="nav-item">
-                    <a class="nav-link" href="Homepage.html">HOME</a>
+                    <a class="nav-link" href="Homepage.php">HOME</a>
                   </li>
-                  <a class="nav-link" href="BrandsPage.html">BRANDS</a>
+                  <a class="nav-link" href="BrandsPage.php">BRANDS</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="HelmetPage.html">HELMETS</a>
+                  <a class="nav-link" href="HelmetPage.php">HELMETS</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="ApparelPage.html">APPAREL</a>
+                  <a class="nav-link" href="ApparelPage.php">APPAREL</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="PartsAccessoriesPage.html">PARTS & ACCESSORIES</a>
+                  <a class="nav-link" href="PartsAccessoriesPage.php">PARTS & ACCESSORIES</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="ContactPage.html">CONTACT</a>
+                  <a class="nav-link" href="ContactPage.php">CONTACT</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link sale-link" href="#">SALE</a>
@@ -107,7 +92,3 @@ if ($conn->connect_error) {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-<?php
-// Close connection at the end of the file
-$conn->close();
-?>

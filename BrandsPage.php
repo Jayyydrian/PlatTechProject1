@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ST Moto & Gear - Premium Brands</title>
     <link rel="stylesheet" href="BrandsPage.css">
-    <link rel="stylesheet" href="../includes/footer.css">
-    <link rel="stylesheet" href="../includes/navbar.css">
+    <link rel="stylesheet" href="./includes/footer.css">
+    <link rel="stylesheet" href="./includes/navbar.css">
 </head>
 <body>
     <div id="navbar"></div>
@@ -86,7 +86,7 @@
         </div>
         
         <div class="shop-btn-container">
-            <a href="Shop.html" class="shop-btn">SHOP ALL BRANDS</a>
+            <a href="Shop.php" class="shop-btn">SHOP ALL BRANDS</a>
         </div>
     </section>
 
@@ -110,12 +110,12 @@
     <script src="Shop.js"></script>
     <script>
         // Load the navbar
-        fetch('../includes/navbar.html')
+        fetch('./includes/navbar.php')
             .then(res => res.text())
             .then(data => document.getElementById('navbar').innerHTML = data);
         
         // Load the footer
-        fetch('../includes/footer.html')
+        fetch('./includes/footer.php')
             .then(res => res.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

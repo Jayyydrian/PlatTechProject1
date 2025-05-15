@@ -452,12 +452,12 @@ $brandResult = $conn->query($brands_sql);
      
     <script>
         // Load the navbar
-        fetch('./includes/navbar.html')
+        fetch('./includes/navbar.php')
           .then(res => res.text())
           .then(data => document.getElementById('navbar').innerHTML = data);
       
         // Load the footer
-        fetch('./includes/footer.html')
+        fetch('./includes/footer.php')
           .then(res => res.text())
           .then(data => document.getElementById('footer').innerHTML = data);
           

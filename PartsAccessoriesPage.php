@@ -86,7 +86,7 @@
         </div>
         
         <div class="shop-btn-container">
-            <a href="Shop.html" class="shop-btn">SHOP ALL PARTS & ACCESSORIES</a>
+            <a href="Shop.php" class="shop-btn">SHOP ALL PARTS & ACCESSORIES</a>
         </div>
     </section>
 

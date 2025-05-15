@@ -111,6 +111,7 @@ $total = $subtotal + $shipping;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="./includes/footer.css">
     <link rel="stylesheet" href="./includes/navbar.css">
@@ -563,12 +564,14 @@ $total = $subtotal + $shipping;
                     
                     <div class="payment-methods">
                         <p>We accept:</p>
-                        <div class="payment-icons">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-amex"></i>
-                            <i class="fab fa-cc-paypal"></i>
-                        </div>
+                       <div class="payment-methods">
+                <img src="Assets/Footer Icons/VISA-Logo-2006.png" alt="Visa" class="payment-icon me-2 mb-2">
+                <img src="Assets/Footer Icons/mastercard.png" alt="Mastercard" class="payment-icon me-2 mb-2">
+                <img src="Assets/Footer Icons/gcash.png" alt="GCash" class="payment-icon me-2 mb-2">
+                <img src="Assets/Footer Icons/maya.png" alt="Maya" class="payment-icon me-2 mb-2">
+                <img src="Assets/Footer Icons/bdo.jpg" alt="BDO" class="payment-icon me-2 mb-2">
+                <img src="Assets/Footer Icons/unionb.png" alt="Union Bank" class="payment-icon mb-2">
+              </div>
                     </div>
                 </div>
             <?php endif; ?>
@@ -585,12 +588,12 @@ $total = $subtotal + $shipping;
     <!-- JAVASCRIPT -->
     <script>
         // Load the navbar
-        fetch('./includes/navbar.html')
+        fetch('./includes/navbar.php')
           .then(res => res.text())
           .then(data => document.getElementById('navbar').innerHTML = data);
       
         // Load the footer
-        fetch('./includes/footer.html')
+        fetch('./includes/footer.php')
           .then(res => res.text())
           .then(data => document.getElementById('footer').innerHTML = data);
           
