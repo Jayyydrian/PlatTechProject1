@@ -1,3 +1,71 @@
+<?php
+// Database connection parameters
+$host = 'localhost';       // Database host
+$dbname = 'stmoto_db';     // Your database name
+$dbuser = 'root';          // Database username
+$dbpass = '';              // Database password
+
+// Initialize response array
+$response = array(
+    'status' => false,
+    'message' => ''
+);
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data and sanitize inputs
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']); // Note: storing as plain text as requested
+    
+    // Simple validation
+    if (empty($username) || empty($email) || empty($password)) {
+        $response['message'] = "All fields are required";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $response['message'] = "Invalid email format";
+    } else {
+        try {
+            // Create database connection
+            $conn = new PDO("mysql:host=$host;dbname=$dbname", $dbuser, $dbpass);
+            
+            // Set PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            // Check if username or email already exists
+            $stmt = $conn->prepare("SELECT * FROM tbl_acc_user WHERE username = ? OR email = ?");
+            $stmt->execute([$username, $email]);
+            
+            if ($stmt->rowCount() > 0) {
+                $response['message'] = "Username or email already exists";
+            } else {
+                // Prepare SQL query to insert new user
+                $stmt = $conn->prepare("INSERT INTO tbl_acc_user (username, email, password) VALUES (?, ?, ?)");
+                $stmt->execute([$username, $email, $password]);
+                
+                $response['status'] = true;
+                $response['message'] = "Signup successful! You can now login.";
+                
+                // Redirect to login page after successful signup
+                header("Location: login.php");
+                exit();
+            }
+        } catch(PDOException $e) {
+            $response['message'] = "Database Error: " . $e->getMessage();
+        }
+        
+        // Close connection
+        $conn = null;
+    }
+    
+    // If not redirected, return JSON response for AJAX requests
+    if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest') {
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

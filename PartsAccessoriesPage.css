@@ -16,7 +16,7 @@ margin-bottom: 15px;
 .hero {
 position: relative;
 height: 400px;
-background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/400');
+background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Assets/Logo/partss.jpeg');
 background-size: cover;
 background-position: center;
 color: white;

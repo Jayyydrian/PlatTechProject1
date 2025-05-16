@@ -89,10 +89,10 @@ $brandResult = $conn->query($brands_sql);
         
         /* Hero Section */
         .hero-section {
-          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./Assets/Category/Brat-Pitt-Benjamin-Button-Motorcycle-bg.jpg');
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./Assets/Logo/shop1.jpg');
           background-size: cover;
           background-position: center;
-          height: 350px;
+          height: 550px;
           color: white;
           text-align: center;
           padding: 80px 20px;

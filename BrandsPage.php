@@ -31,7 +31,7 @@
         <h2>Featured Brands</h2>
         <div class="brand-grid">
             <div class="brand-card">
-                <img src="/api/placeholder/300/200" alt="Dainese Logo">
+                <img src="./Assets/BrandLogo/dainese.png" alt="Dainese Logo">
                 <div class="brand-info">
                     <h3>Dainese</h3>
                     <p>Italian excellence in protective motorcycle gear since 1972. Dainese pioneered innovative safety technologies including the back protector and D-air® airbag systems, setting new standards in rider protection.</p>
@@ -40,7 +40,7 @@
             </div>
             
             <div class="brand-card">
-                <img src="/api/placeholder/300/200" alt="Alpinestars Logo">
+                <img src="./Assets/BrandLogo/alpinestars.png" alt="Alpinestars Logo">
                 <div class="brand-info">
                     <h3>Alpinestars</h3>
                     <p>Founded in 1963, Alpinestars has evolved from a boot manufacturer to a comprehensive technical apparel company with a rich racing heritage and cutting-edge protective gear for motorcyclists.</p>
@@ -49,7 +49,7 @@
             </div>
             
             <div class="brand-card">
-                <img src="/api/placeholder/300/200" alt="Shoei Logo">
+                <img src="./Assets/BrandLogo/shoei.png" alt="Shoei Logo">
                 <div class="brand-info">
                     <h3>Shoei</h3>
                     <p>Japanese precision and craftsmanship define Shoei helmets, handmade since 1959. Known for premium quality construction, advanced aerodynamics, and superior comfort for serious riders.</p>
@@ -58,7 +58,7 @@
             </div>
             
             <div class="brand-card">
-                <img src="/api/placeholder/300/200" alt="Fox Racing Logo">
+                <img src="./Assets/BrandLogo/foxra.png" alt="Fox Racing Logo">
                 <div class="brand-info">
                     <h3>Fox Racing</h3>
                     <p>Born in 1974, Fox Racing started as a small distribution business and grew into an iconic brand synonymous with motocross and off-road riding culture, combining performance with distinctive style.</p>
@@ -67,7 +67,7 @@
             </div>
             
             <div class="brand-card">
-                <img src="/api/placeholder/300/200" alt="AGV Logo">
+                <img src="./Assets/BrandLogo/agv.png" alt="AGV Logo">
                 <div class="brand-info">
                     <h3>AGV</h3>
                     <p>Italian helmet manufacturer founded in 1947 with deep racing heritage. AGV combines innovative technology with iconic design, protecting champions like Valentino Rossi throughout their illustrious careers.</p>
@@ -76,7 +76,7 @@
             </div>
             
             <div class="brand-card">
-                <img src="/api/placeholder/300/200" alt="Rev'it Logo">
+                <img src="./Assets/BrandLogo/revit.png" alt="Rev'it Logo">
                 <div class="brand-info">
                     <h3>Rev'it</h3>
                     <p>Dutch design meets advanced functionality. Since 1995, Rev'it has created innovative motorcycle apparel that seamlessly blends protection, comfort, and sophisticated European styling for the modern rider.</p>
@@ -93,14 +93,12 @@
     <section class="brand-partners">
         <h2>Our Brand Partners</h2>
         <div class="brand-logos">
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="Dainese"></div>
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="Alpinestars"></div>
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="Shoei"></div>
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="Fox Racing"></div>
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="AGV"></div>
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="Rev'it"></div>
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="O'Neal"></div>
-            <div class="brand-logo"><img src="/api/placeholder/150/100" alt="HJC"></div>
+            <div class="brand-logo"><img src="./Assets/BrandLogo/dainese.png" alt="Dainese"></div>
+            <div class="brand-logo"><img src="./Assets/BrandLogo/alphinestars.png" alt="Alpinestars"></div>
+            <div class="brand-logo"><img src="./Assets/BrandLogo/shoei.png" alt="Shoei"></div>
+            <div class="brand-logo"><img src="./Assets/BrandLogo/foxra.png" alt="Fox Racing"></div>
+            <div class="brand-logo"><img src="./Assets/BrandLogo/agv.png" alt="AGV"></div>
+            <div class="brand-logo"><img src="./Assets/BrandLogo/revit.png" alt="Rev'it"></div>
         </div>
     </section>
 

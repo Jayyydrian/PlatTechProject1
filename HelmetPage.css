@@ -13,7 +13,7 @@ section {
 
 /* Hero section styles */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/400');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Assets/Logo/headerhelm.jpeg');
     background-size: cover;
     background-position: center;
     color: white;

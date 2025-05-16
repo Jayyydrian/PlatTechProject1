@@ -16,7 +16,7 @@
     <nav id="main-nav" class="navbar navbar-expand-lg shadow-sm">
         <div class="container">
           <!-- Logo/Brand -->
-          <a class="navbar-brand fw-bold" href="#">
+          <a class="navbar-brand fw-bold" href="Homepage.php">
             <img src="Assets/Logo/stmotoo1.png" alt="ST Moto & Gear" class="logo">
             <p class="logo-text">ST Moto & Gear</p>
           </a>
