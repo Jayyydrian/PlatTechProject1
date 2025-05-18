@@ -194,43 +194,51 @@ $added_to_cart = isset($_GET['added']) && $_GET['added'] == 'true';
             </div>
 
             <!-- Add to cart form -->
-            <form method="post" action="cart.php" id="add-to-cart-form">
-                <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                <input type="hidden" name="add_to_cart" value="1">
-                
-                <?php if (!empty($colors)): ?>
-                <div class="options-section">
-                    <h3>Color</h3>
-                    <div class="color-options">
-                        <?php foreach ($colors as $color): ?>
-                            <div class="color-option" style="background-color: <?php echo htmlspecialchars($color); ?>" data-color="<?php echo htmlspecialchars($color); ?>" onclick="selectColor('<?php echo htmlspecialchars($color); ?>')"></div>
-                        <?php endforeach; ?>
-                    </div>
-                    <input type="hidden" name="color" id="selected_color" value="">
-                </div>
-                <?php endif; ?>
+<form method="post" action="cart.php" id="add-to-cart-form">
+    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+    <input type="hidden" name="add_to_cart" value="1">
 
-                <?php if (!empty($sizes)): ?>
-                <div class="options-section">
-                    <h3>Size</h3>
-                    <div class="size-options">
-                        <?php foreach ($sizes as $size): ?>
-                            <div class="size-option" data-size="<?php echo htmlspecialchars($size); ?>" onclick="selectSize('<?php echo htmlspecialchars($size); ?>')"><?php echo htmlspecialchars($size); ?></div>
-                        <?php endforeach; ?>
-                    </div>
-                    <input type="hidden" name="size" id="selected_size" value="">
-                </div>
-                <?php endif; ?>
+    <?php if (!empty($colors)): ?>
+    <div class="options-section">
+        <h3>Color</h3>
+        <div class="color-options">
+            <?php foreach ($colors as $color): ?>
+                <div class="color-option" 
+                     style="background-color: <?php echo htmlspecialchars($color); ?>" 
+                     data-color="<?php echo htmlspecialchars($color); ?>" 
+                     onclick="selectColor('<?php echo htmlspecialchars($color); ?>')"></div>
+            <?php endforeach; ?>
+        </div>
+        <input type="hidden" name="color" id="selected_color" value="">
+    </div>
+    <?php endif; ?>
 
-                <div class="quantity-section">
-                    <div class="quantity-controls">
-                        <button type="button" class="quantity-btn decrease">-</button>
-                        <input type="text" name="quantity" class="quantity-input" value="1" readonly>
-                        <button type="button" class="quantity-btn increase">+</button>
-                    </div>
-                    <button type="submit" class="add-to-cart-btn">Add to cart</button>
+    <?php if (!empty($sizes)): ?>
+    <div class="options-section">
+        <h3>Size</h3>
+        <div class="size-options">
+            <?php foreach ($sizes as $size): ?>
+                <div class="size-option" 
+                     data-size="<?php echo htmlspecialchars($size); ?>" 
+                     onclick="selectSize('<?php echo htmlspecialchars($size); ?>')">
+                     <?php echo htmlspecialchars($size); ?>
                 </div>
-            </form>
+            <?php endforeach; ?>
+        </div>
+        <input type="hidden" name="size" id="selected_size" value="">
+    </div>
+    <?php endif; ?>
+
+    <div class="quantity-section">
+        <div class="quantity-controls">
+            <button type="button" class="quantity-btn decrease">-</button>
+            <input type="text" name="quantity" class="quantity-input" value="1" readonly>
+            <button type="button" class="quantity-btn increase">+</button>
+        </div>
+        <button type="submit" class="add-to-cart-btn">Add to cart</button>
+    </div>
+</form>
+
 
             <button onclick="buyNow()" class="buy-now-btn">Buy it now</button>
 

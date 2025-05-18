@@ -15,21 +15,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $dbuser, $dbpass);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $email = trim($_POST['email']); // Trim whitespace
+        $email = trim($_POST['email']);
         $password = $_POST['password'];
 
-        // Prepare SQL statement to prevent SQL injection
+        // Prepare and execute query
         $stmt = $conn->prepare("SELECT * FROM tbl_acc_user WHERE email = ?");
         $stmt->execute([$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
-            // Since passwords are stored as plain text in your database
+            // Compare password directly (plain text)
             if ($password === $user['password']) {
-                // Login successful
+                // Successful login: store user data in session
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
-                header("Location: Homepage.php"); // Redirect to dashboard or home page
+                
+                // Clear any previous cart data in session (optional)
+                if (isset($_SESSION['cart'])) {
+                    unset($_SESSION['cart']);
+                }
+
+                header("Location: Homepage.php");
                 exit();
             } else {
                 $error_message = "Invalid email or password";
@@ -37,11 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $error_message = "Invalid email or password";
         }
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
         $error_message = "Connection failed: " . $e->getMessage();
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

@@ -126,50 +126,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="login-card">
                 <h2>Create your account</h2>
                 
-                <form class="login-form">
-                    <div class="form-group">
-                        <div class="form-group">
-                            <input type="text" id="username" placeholder="Username" required>
-                        </div>
-                        <input type="email" id="email" placeholder="Email address" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="password" id="password" placeholder="Password" required>
-                    </div>
-                    
-                    
-                    <div class="form-options">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgot password?</a>
-                    </div>
-                    
-                    <button type="submit" class="login-btn">Signup</button>
-                    
-                    <div class="login-divider">
-                        <span>OR</span>
-                    </div>
-                    
-                    <div class="social-login">
-                        <button class="social-login-btn facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#1877F2"></path>
-                            </svg>
-                            Facebook
-                        </button>
-                        <button class="social-login-btn google">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path d="M12.545 12.151L12.545 14.106L16.061 14.106C15.875 15.177 14.59 17.25 12.545 17.25C10.754 17.25 9.242 15.75 9.242 13.875C9.242 12 10.754 10.5 12.545 10.5C13.598 10.5 14.303 10.935 14.712 11.343L16.197 9.892C15.184 8.919 13.94 8.336 12.545 8.336C9.56 8.336 7.06 10.837 7.06 13.875C7.06 16.913 9.56 19.414 12.545 19.414C15.674 19.414 18 17.25 18 13.963C18 13.5 17.955 13.086 17.864 12.664L12.545 12.664L12.545 12.151Z" fill="#4285F4"></path>
-                            </svg>
-                            Google
-                        </button>
-                    </div>
-                    
-                    <p class="signup-link">Already have an account? <a href="login.php">Login</a></p>
-                </form>
+                <form class="login-form" method="POST" action="signup.php">
+    <div class="form-group">
+        <input type="text" id="username" name="username" placeholder="Username" required>
+    </div>
+    
+    <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Email address" required>
+    </div>
+    
+    <div class="form-group">
+        <input type="password" id="password" name="password" placeholder="Password" required>
+    </div>
+    
+    <div class="form-options">
+        <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+        </div>
+        <a href="#" class="forgot-password">Forgot password?</a>
+    </div>
+    
+    <button type="submit" class="login-btn">Signup</button>
+    
+    <div class="login-divider">
+        <span>OR</span>
+    </div>
+    
+    <div class="social-login">
+        <button type="button" class="social-login-btn facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#1877F2"></path>
+            </svg>
+            Facebook
+        </button>
+        <button type="button" class="social-login-btn google">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M12.545 12.151L12.545 14.106L16.061 14.106C15.875 15.177 14.59 17.25 12.545 17.25C10.754 17.25 9.242 15.75 9.242 13.875C9.242 12 10.754 10.5 12.545 10.5C13.598 10.5 14.303 10.935 14.712 11.343L16.197 9.892C15.184 8.919 13.94 8.336 12.545 8.336C9.56 8.336 7.06 10.837 7.06 13.875C7.06 16.913 9.56 19.414 12.545 19.414C15.674 19.414 18 17.25 18 13.963C18 13.5 17.955 13.086 17.864 12.664L12.545 12.664L12.545 12.151Z" fill="#4285F4"></path>
+            </svg>
+            Google
+        </button>
+    </div>
+    
+    <p class="signup-link">Already have an account? <a href="login.php">Login</a></p>
+</form>
+
             </div>
         </div>
     </main>
