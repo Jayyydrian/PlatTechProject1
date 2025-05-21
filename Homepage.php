@@ -29,15 +29,32 @@ crossorigin=""/>
 
   <!-- Carousel -->
   <div id="homepage-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="2"></button>
+    </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="Assets/Carousel/carousel1.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption">
+          <h2>Premium Motorcycle Gear</h2>
+          <p>Discover our latest collection of high-quality riding equipment</p>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="Assets/Carousel/carousel2.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption">
+          <h2>Safety First</h2>
+          <p>Top-rated protective gear for every rider</p>
+        </div>
       </div>
       <div class="carousel-item">
         <img src="Assets/Carousel/carousel3.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption">
+          <h2>Exclusive Deals</h2>
+          <p>Special offers on premium motorcycle accessories</p>
+        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#homepage-carousel" data-bs-slide="prev">
@@ -46,14 +63,6 @@ crossorigin=""/>
     <button class="carousel-control-next" type="button" data-bs-target="#homepage-carousel" data-bs-slide="next">
       <span class="carousel-control-next-icon"></span>
     </button>
-  </div>
-
-  <!-- Announcement Bar -->
-  <div class="announcement-bar">
-    <ul class="announcement-slider">
-      <li>SAVE UP TO 50% OFF ON SELECTED ITEMS</li>
-      <li>Spend P4,500 & Get P100 Shipping Discount!</li>
-    </ul>
   </div>
 
   <!-- New Arrivals -->

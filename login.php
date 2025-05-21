@@ -26,15 +26,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user) {
             // Compare password directly (plain text)
             if ($password === $user['password']) {
-                // Successful login: store user data in session
+                // Regenerate session ID for security
+                session_regenerate_id(true);
+                
+                // Store user data in session
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['logged_in'] = true;
+                $_SESSION['last_activity'] = time();
+                
+                // Store additional user data if available
+                if (isset($user['phone'])) $_SESSION['phone'] = $user['phone'];
+                if (isset($user['address'])) $_SESSION['address'] = $user['address'];
                 
                 // Clear any previous cart data in session (optional)
                 if (isset($_SESSION['cart'])) {
                     unset($_SESSION['cart']);
                 }
 
+                // Set a success message
+                $_SESSION['login_success'] = true;
+                
+                // Redirect to homepage
                 header("Location: Homepage.php");
                 exit();
             } else {
@@ -46,6 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         $error_message = "Connection failed: " . $e->getMessage();
     }
+}
+
+// Check if user is already logged in
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    header("Location: Homepage.php");
+    exit();
 }
 ?>
 

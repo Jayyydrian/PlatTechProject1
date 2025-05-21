@@ -53,6 +53,23 @@ body {
     color: #333;
     font-size: 1.3rem;
     text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-icons .icon-link:hover {
+    color: #d91f1c;
+    transform: translateY(-2px);
+  }
+  
+  /* Logout Icon Specific Styling */
+  .nav-icons .icon-link[title="Logout"] {
+    color: #d91f1c;
+    font-size: 1.4rem;
+  }
+  
+  .nav-icons .icon-link[title="Logout"]:hover {
+    color: #b81a18;
+    transform: translateY(-2px);
   }
   
   /* Category Navigation Styling */

@@ -1,15 +1,19 @@
+<?php
+require_once 'session_check.php';
+require_once '../guest-session.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="navbar.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
 <body>
@@ -33,9 +37,26 @@
       
           <!-- User Account & Cart Icons -->
           <div class="nav-icons d-flex align-items-center">
-            <a href="./login.php" class="icon-link me-3">
-              <i class="bi bi-person"></i>
-            </a>
+            <?php if (isLoggedIn()): ?>
+              <a href="account-manager.php" class="icon-link me-3">
+                <i class="bi bi-person"></i>
+              </a>
+              <a href="logout.php" class="icon-link me-3" title="Logout">
+                <i class="bi bi-box-arrow-right"></i>
+              </a>
+            <?php else: ?>
+              <a href="login.php" class="icon-link me-3" title="Log In">
+                <i class="bi bi-door-open"></i>
+              </a>
+              <a href="register.php" class="icon-link me-3" title="Register">
+                <i class="bi bi-person-add"></i>
+              </a>
+              <?php if (!isset($_SESSION['logged_in'])): ?>
+                <a href="guest-manager.php" class="icon-link me-3" title="Continue as Guest">
+                  <i class="bi bi-person-plus"></i>
+                </a>
+              <?php endif; ?>
+            <?php endif; ?>
             <a href="./cart.php" class="icon-link">
               <i class="bi bi-cart3"></i>
             </a>
